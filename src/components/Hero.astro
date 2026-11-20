@@ -7,7 +7,7 @@ import Media from './Media.astro';
 const portrait = profile.portrait?.image ?? await previewImage('portrait');
 const hasPortraitArea = Boolean(portrait) || import.meta.env.DEV;
 ---
-<section class:list={['hero', { 'hero-text-only': !hasPortraitArea }]} aria-labelledby="hello">
+<section class="hero" aria-labelledby="hello">
   {hasPortraitArea && <div class="hero-portrait media">
     <Media image={portrait} alt={profile.portrait?.alt ?? profile.name} placeholder="Место для портрета" priority sizes="(max-width: 680px) 116px, 218px" />
   </div>}

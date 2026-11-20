@@ -13,19 +13,13 @@
 }
 
 .portfolio-home .hero {
-  grid-template-columns: minmax(0, 1fr) clamp(148px, 18vw, 218px);
-  grid-template-areas: "copy portrait";
+  grid-template-columns: minmax(0, 895px);
   align-items: start;
-  gap: clamp(32px, 5.4vw, 78px);
+  gap: clamp(20px, 2.25vw, 32px);
   padding-block: clamp(40px, 4.3vw, 62px) clamp(47px, 4.3vw, 62px);
 }
-.portfolio-home .hero-text-only {
-  grid-template-columns: minmax(0, 895px);
-  grid-template-areas: "copy";
-}
-.portfolio-home .hero-copy { grid-area: copy; }
 .portfolio-home .hero-portrait {
-  grid-area: portrait;
+  max-width: clamp(148px, 18vw, 218px);
   aspect-ratio: 1;
   align-self: start;
 }
@@ -89,13 +83,11 @@
 .portfolio-home .footer-inner { border-top: 1px solid var(--line); }
 
 @media (max-width: 680px) {
-  .portfolio-home .hero:not(.hero-text-only) { grid-template-areas: "portrait" "copy"; }
   .portfolio-home .hero {
-    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
     padding-top: 20px;
   }
-  .portfolio-home .hero-portrait { max-width: 116px; aspect-ratio: 1; }
+  .portfolio-home .hero-portrait { max-width: 116px; }
   .portfolio-home .hero-portrait .media-placeholder { font-size: 0.6875rem; }
   .portfolio-home .hero h1 { font-size: clamp(2rem, 8.8vw, 3.5rem); line-height: 1.09; }
   .portfolio-home .concept-images { grid-template-columns: minmax(0, 1fr); }
