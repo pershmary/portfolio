@@ -18,7 +18,7 @@ const Card = published ? 'a' : 'article';
     <Media
       image={cover}
       alt={data.coverAlt ?? `Интерфейс проекта «${data.title}»`}
-      sizes="(max-width: 680px) 100vw, (max-width: 1360px) 49vw, 615px"
+      sizes="(max-width: 680px) 100vw, min(49vw, calc(25vw + 310px))"
     />
   </div>}
   <div class="case-caption">

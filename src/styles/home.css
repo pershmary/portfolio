@@ -8,6 +8,8 @@
   --sage: #edf0ed;
   --sand: #f1ede8;
   --slate: #eeeff2;
+  --gutter: clamp(10px, 2.5vw, 36px);
+  --content-width: calc(50% + 620px);
   --column-gap: clamp(16px, 2vw, 28px);
   --radius: 3px;
 }
