@@ -284,7 +284,6 @@ figcaption { margin-top: 8px; color: var(--muted); font-size: 0.875rem; }
 .footer { background: var(--portrait); }
 .footer-inner {
   display: flex;
-  justify-content: center;
   padding-block: clamp(24px, 3vw, 44px);
 }
 .footer .contact-links { flex-direction: column; align-items: flex-start; }

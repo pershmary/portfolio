@@ -13,13 +13,19 @@
 }
 
 .portfolio-home .hero {
-  grid-template-columns: clamp(148px, 18vw, 218px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) clamp(148px, 18vw, 218px);
+  grid-template-areas: "copy portrait";
   align-items: start;
   gap: clamp(32px, 5.4vw, 78px);
   padding-block: clamp(40px, 4.3vw, 62px) clamp(47px, 4.3vw, 62px);
 }
-.portfolio-home .hero-text-only { grid-template-columns: minmax(0, 895px); }
+.portfolio-home .hero-text-only {
+  grid-template-columns: minmax(0, 895px);
+  grid-template-areas: "copy";
+}
+.portfolio-home .hero-copy { grid-area: copy; }
 .portfolio-home .hero-portrait {
+  grid-area: portrait;
   aspect-ratio: 1;
   align-self: start;
 }
@@ -83,6 +89,7 @@
 .portfolio-home .footer-inner { border-top: 1px solid var(--line); }
 
 @media (max-width: 680px) {
+  .portfolio-home .hero:not(.hero-text-only) { grid-template-areas: "portrait" "copy"; }
   .portfolio-home .hero {
     grid-template-columns: minmax(0, 1fr);
     gap: 18px;
