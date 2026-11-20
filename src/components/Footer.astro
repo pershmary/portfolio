@@ -1,14 +1,8 @@
 ---
-import { profile } from '../data/profile';
 import Contacts from './Contacts.astro';
 ---
 <footer class="footer" id="contacts">
   <div class="container footer-inner">
-    <div>
-      <h2>Контакты</h2>
-      <p>{profile.name}</p>
-    </div>
     <Contacts />
-    <a class="top-link" href="#top">Наверх <span class="arrow arrow-up" aria-hidden="true"></span></a>
   </div>
 </footer>

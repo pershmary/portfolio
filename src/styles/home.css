@@ -12,9 +12,6 @@
   --radius: 3px;
 }
 
-.portfolio-home .header-inner { min-height: 72px; border-bottom: 0; }
-.portfolio-home .header nav a { color: var(--muted); }
-
 .portfolio-home .hero {
   grid-template-columns: clamp(148px, 18vw, 218px) minmax(0, 1fr);
   align-items: start;
@@ -54,6 +51,8 @@
   font-size: 0.9375rem;
 }
 
+.portfolio-home .hero-bio p + p { margin-top: 0.75em; }
+
 .portfolio-home .section h2 {
   font-size: clamp(1.85rem, 3.3vw, 2.8rem);
   font-weight: var(--weight-semibold);
@@ -84,7 +83,6 @@
 .portfolio-home .footer-inner { border-top: 1px solid var(--line); }
 
 @media (max-width: 680px) {
-  .portfolio-home .header-inner { min-height: 60px; }
   .portfolio-home .hero {
     grid-template-columns: minmax(0, 1fr);
     gap: 18px;

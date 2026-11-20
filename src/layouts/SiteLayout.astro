@@ -4,7 +4,6 @@ import '@fontsource-variable/manrope';
 import '../styles/site.css';
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { profile } from '../data/profile';
 
@@ -36,7 +35,7 @@ const ogImage = Astro.site && socialImage
     <meta name="description" content={description} />
     <meta name="theme-color" content={home ? "#ffffff" : "#f9f9f6"} />
     {import.meta.env.DEV && <meta name="robots" content="noindex, nofollow" />}
-    <link rel="icon" type="image/svg+xml" href={sitePath('/favicon.svg')} />
+    <link rel="icon" type="image/png" sizes="48x48" href={sitePath('/favicon.png')} />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content={type} />
     <meta property="og:locale" content="ru_RU" />
@@ -49,7 +48,6 @@ const ogImage = Astro.site && socialImage
   </head>
   <body class:list={{ "portfolio-home": home }}>
     <a class="skip-link" href="#main">К содержанию</a>
-    <Header />
     <main class="container" id="main">
       <slot />
     </main>

@@ -13,7 +13,9 @@ const hasPortraitArea = Boolean(portrait) || import.meta.env.DEV;
   </div>}
   <div class="hero-copy">
     <h1 id="hello">{profile.greeting} {profile.name}. {profile.role}</h1>
-    <p class="hero-bio">{profile.bio}</p>
+    <div class="hero-bio">
+      {profile.bio.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
     <Contacts />
   </div>
 </section>
