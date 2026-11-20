@@ -26,7 +26,7 @@
 .portfolio-home .hero h1 {
   max-width: 19ch;
   font-weight: var(--weight-semibold);
-  font-size: clamp(2.65rem, 4.9vw, 4.25rem);
+  font-size: clamp(2.65rem, 4.9vw, 4rem);
   line-height: 1.04;
   letter-spacing: -0.045em;
   text-wrap: balance;
