@@ -90,7 +90,7 @@
 
 @media (min-width: 1024px) {
   .portfolio-home {
-    --gutter: 100px;
+    --gutter: 150px;
     --content-width: 100%;
   }
 }
