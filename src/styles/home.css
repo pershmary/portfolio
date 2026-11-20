@@ -88,6 +88,13 @@
 .portfolio-home .footer { background: var(--page); }
 .portfolio-home .footer-inner { border-top: 1px solid var(--line); }
 
+@media (min-width: 1024px) {
+  .portfolio-home {
+    --gutter: 100px;
+    --content-width: 100%;
+  }
+}
+
 @media (max-width: 680px) {
   .portfolio-home .hero {
     gap: 18px;
