@@ -1,0 +1,21 @@
+---
+import { profile } from '../data/profile';
+import Contacts from './Contacts.astro';
+import Media from './Media.astro';
+
+const hasPortraitArea = Boolean(profile.portrait) || import.meta.env.DEV;
+---
+<section class:list={['hero', { 'hero-text-only': !hasPortraitArea }]} aria-labelledby="hello">
+  {hasPortraitArea && <div class="hero-portrait media">
+    <Media image={profile.portrait?.image} alt={profile.portrait?.alt} placeholder="Место для портрета" priority sizes="(max-width: 680px) 220px, 38vw" />
+  </div>}
+  <div class="hero-copy">
+    <p class="hero-meta">{profile.role} <span aria-hidden="true">·</span> {profile.location}</p>
+    <h1 id="hello">{profile.greeting}<br />{profile.name}</h1>
+    <p class="hero-lead">{profile.headline}</p>
+    <Contacts />
+    <div class="hero-bio">
+      {profile.bio.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
+</section>

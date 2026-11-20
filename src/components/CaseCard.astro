@@ -1,0 +1,31 @@
+---
+import { sitePath } from '../data/paths';
+import type { CollectionEntry } from 'astro:content';
+import Media from './Media.astro';
+
+interface Props {
+  entry: CollectionEntry<'cases'>;
+}
+
+const { entry: { data } } = Astro.props;
+const published = data.status === 'published';
+const Card = published ? 'a' : 'article';
+---
+<Card class:list={['case-card', { 'case-link': published }]} href={published ? sitePath(`/cases/${data.slug}/`) : undefined}>
+  <div class:list={['case-cover', 'media', `tone-${data.tone}`]}>
+    <Media
+      image={data.cover}
+      alt={data.coverAlt}
+      placeholder="Место для обложки"
+      sizes="(max-width: 680px) 100vw, (max-width: 1360px) 49vw, 615px"
+    />
+  </div>
+  <div class="case-caption">
+    <div class="case-heading">
+      <h3>{data.title}</h3>
+      {published && <span class="arrow arrow-out case-arrow" aria-hidden="true"></span>}
+    </div>
+    <p class="summary">{data.summary}</p>
+    {!published && <p class="case-status">Кейс готовится</p>}
+  </div>
+</Card>

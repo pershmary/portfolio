@@ -1,0 +1,10 @@
+---
+import { sitePath } from '../data/paths';
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+<SiteLayout title="Страница не найдена — Мария Першина" description="Портфолио Марии Першиной">
+  <div class="not-found">
+    <h1>Страница не найдена</h1>
+    <a class="text-link" href={sitePath('/')}><span class="arrow arrow-left" aria-hidden="true"></span> На главную</a>
+  </div>
+</SiteLayout>

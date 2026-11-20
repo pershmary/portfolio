@@ -1,0 +1,11 @@
+---
+import { profile } from '../data/profile';
+---
+<ul class="contact-links" aria-label="Способы связи">
+  {profile.contacts.map(({ href, label }) => <li><a href={href}>
+    {label} <span class="arrow arrow-out" aria-hidden="true"></span>
+  </a></li>)}
+  {profile.resume && <li><a href={profile.resume.href}>
+    {profile.resume.label} <span class="arrow arrow-out" aria-hidden="true"></span>
+  </a></li>}
+</ul>

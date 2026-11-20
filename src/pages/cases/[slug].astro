@@ -1,0 +1,27 @@
+---
+import { render } from 'astro:content';
+import type { InferGetStaticPropsType } from 'astro';
+import CaseLayout from '../../layouts/CaseLayout.astro';
+import { publishedCases, validatePublishedCase } from '../../data/work';
+
+export function getStaticPaths() {
+  return publishedCases.map((entry, index) => {
+    validatePublishedCase(entry);
+    const next = publishedCases.length > 1
+      ? publishedCases[(index + 1) % publishedCases.length]
+      : undefined;
+
+    return {
+      params: { slug: entry.data.slug },
+      props: { entry, next },
+    };
+  });
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { entry, next } = Astro.props;
+const { Content } = await render(entry);
+---
+<CaseLayout entry={entry} next={next}>
+  <Content />
+</CaseLayout>

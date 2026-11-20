@@ -1,0 +1,10 @@
+---
+import { homeCases } from '../data/work';
+import CaseCard from './CaseCard.astro';
+---
+{homeCases.length > 0 && <section class="section" id="cases" aria-labelledby="cases-title">
+  <h2 id="cases-title">Избранные кейсы</h2>
+  <div class="case-grid">
+    {homeCases.map((entry) => <CaseCard entry={entry} />)}
+  </div>
+</section>}

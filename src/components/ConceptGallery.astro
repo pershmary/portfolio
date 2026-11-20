@@ -1,0 +1,11 @@
+---
+import { homeConcepts } from '../data/work';
+import ConceptCard from './ConceptCard.astro';
+---
+{homeConcepts.length > 0 && <section class="section concepts" id="concepts" aria-labelledby="concepts-title">
+  <div class="section-heading">
+    <h2 id="concepts-title">Концепты</h2>
+    <p>Наброски и экспериментальные проекты, которые по разным причинам не попали в продакшен.</p>
+  </div>
+  {homeConcepts.map((entry) => <ConceptCard entry={entry} />)}
+</section>}

@@ -1,0 +1,18 @@
+---
+import { sitePath } from '../data/paths';
+import { profile } from '../data/profile';
+import { showConcepts, showWork } from '../data/work';
+
+const home = Astro.url.pathname.replace(/\/$/, '') === sitePath('/').replace(/\/$/, '');
+const section = (id: string) => `${home ? '' : sitePath('/')}#${id}`;
+---
+<header class="header" id="top">
+  <div class="container header-inner">
+    <a class="wordmark" href={home ? '#top' : sitePath('/')}>{profile.name}</a>
+    <nav aria-label="Основная навигация">
+      {showWork && <a href={section('cases')}>Кейсы</a>}
+      {showConcepts && <a href={section('concepts')}>Концепты</a>}
+      <a href={section('contacts')}>Контакты</a>
+    </nav>
+  </div>
+</header>
