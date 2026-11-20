@@ -37,11 +37,23 @@
   text-wrap: balance;
 }
 .portfolio-home .hero .contact-links { margin-top: 9px; justify-content: center; }
+.portfolio-home .hero .contact-links li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.portfolio-home .hero .contact-links li:nth-child(2)::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted);
+}
 .portfolio-home .contact-links a {
   padding: 0;
   border: 0;
   gap: 7px;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: var(--weight-semibold);
   text-decoration: underline;
 }
