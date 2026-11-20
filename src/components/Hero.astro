@@ -12,14 +12,8 @@ const hasPortraitArea = Boolean(portrait) || import.meta.env.DEV;
     <Media image={portrait} alt={profile.portrait?.alt ?? profile.name} placeholder="Место для портрета" priority sizes="(max-width: 680px) 116px, 218px" />
   </div>}
   <div class="hero-copy">
-    <p class="hero-greeting">{profile.greeting} {profile.name}.</p>
-    <h1 id="hello">{profile.headline}</h1>
-    <div class="hero-details">
-      <p class="hero-meta">{profile.role} <span aria-hidden="true">·</span> {profile.location}</p>
-      <Contacts />
-    </div>
-    <div class="hero-bio">
-      {profile.bio.map((paragraph) => <p>{paragraph}</p>)}
-    </div>
+    <h1 id="hello">{profile.greeting} {profile.name}. {profile.role}</h1>
+    <p class="hero-bio">{profile.bio}</p>
+    <Contacts />
   </div>
 </section>

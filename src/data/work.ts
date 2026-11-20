@@ -26,4 +26,4 @@ export const homeConcepts = (await getCollection('concepts')).sort(byOrder).filt
 
 export const showWork = homeCases.length > 0;
 export const showConcepts = homeConcepts.length > 0;
-export const profileDescription = `${profile.name} — ${profile.role}. ${profile.headline}`;
+export const profileDescription = `${profile.name} — ${profile.role}. Проектирую текстовый редактор Saby.`;
