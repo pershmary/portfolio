@@ -1,6 +1,7 @@
 ---
 import { sitePath } from '../data/paths';
 import type { CollectionEntry } from 'astro:content';
+import { previewImage } from '../data/preview';
 import Media from './Media.astro';
 
 interface Props {
@@ -8,18 +9,18 @@ interface Props {
 }
 
 const { entry: { data } } = Astro.props;
+const cover = data.cover ?? await previewImage(data.slug);
 const published = data.status === 'published';
 const Card = published ? 'a' : 'article';
 ---
-<Card class:list={['case-card', { 'case-link': published }]} href={published ? sitePath(`/cases/${data.slug}/`) : undefined}>
-  <div class:list={['case-cover', 'media', `tone-${data.tone}`]}>
+<Card class:list={['case-card', { 'case-link': published, 'case-card-text': !cover }]} href={published ? sitePath(`/cases/${data.slug}/`) : undefined}>
+  {cover && <div class:list={['case-cover', 'media', `tone-${data.tone}`]}>
     <Media
-      image={data.cover}
-      alt={data.coverAlt}
-      placeholder="Место для обложки"
+      image={cover}
+      alt={data.coverAlt ?? `Интерфейс проекта «${data.title}»`}
       sizes="(max-width: 680px) 100vw, (max-width: 1360px) 49vw, 615px"
     />
-  </div>
+  </div>}
   <div class="case-caption">
     <div class="case-heading">
       <h3>{data.title}</h3>

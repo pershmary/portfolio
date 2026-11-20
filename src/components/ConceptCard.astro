@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { previewImage } from '../data/preview';
 import Media from './Media.astro';
 
 interface Props {
@@ -7,6 +8,10 @@ interface Props {
 }
 
 const { entry: { data } } = Astro.props;
+const images = await Promise.all(data.images.map(async (item, index) => ({
+  ...item,
+  src: item.src ?? await previewImage(`${data.slug}-${index + 1}`),
+})));
 ---
 <article class="concept-card">
   <div class="concept-heading">
@@ -14,14 +19,14 @@ const { entry: { data } } = Astro.props;
     {data.summary && <p class="summary">{data.summary}</p>}
   </div>
   <div class="concept-images">
-    {data.images.map(({ src, alt, caption }, index) => {
+    {images.map(({ src, alt, caption }, index) => {
       const id = `${data.slug}-screen-${index + 1}`;
 
       return <figure>
         {src ? (
           <>
             <button class="concept-screen media" type="button" data-open-image={id} aria-label={`Увеличить изображение «${caption}»`} aria-haspopup="dialog">
-              <Media image={src} alt={alt} sizes="(max-width: 680px) 100vw, 33vw" />
+              <Media image={src} alt={alt ?? `${data.title} — ${caption}`} sizes="(max-width: 680px) 100vw, 33vw" />
               <span class="zoom-mark" aria-hidden="true">+</span>
             </button>
             <dialog class="image-dialog" id={id} aria-labelledby={`${id}-title`}>
@@ -31,7 +36,7 @@ const { entry: { data } } = Astro.props;
                   <button class="dialog-close" aria-label="Закрыть изображение" autofocus>×</button>
                 </form>
               </div>
-              <Media image={src} alt={alt} sizes="90vw" />
+              <Media image={src} alt={alt ?? `${data.title} — ${caption}`} sizes="90vw" />
             </dialog>
           </>
         ) : (

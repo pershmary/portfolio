@@ -1,4 +1,5 @@
 ---
+import '../styles/home.css';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Hero from '../components/Hero.astro';
 import CaseGrid from '../components/CaseGrid.astro';
@@ -6,7 +7,7 @@ import ConceptGallery from '../components/ConceptGallery.astro';
 import { profile } from '../data/profile';
 import { profileDescription } from '../data/work';
 ---
-<SiteLayout title={`${profile.name} — ${profile.role}`} description={profileDescription}>
+<SiteLayout title={`${profile.name} — ${profile.role}`} description={profileDescription} home>
   <Hero />
   <CaseGrid />
   <ConceptGallery />
