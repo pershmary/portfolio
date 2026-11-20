@@ -16,7 +16,7 @@ type Profile = {
   name: string;
   greeting: string;
   role: string;
-  bio: string[];
+  bio: string;
   contacts: Contact[];
   portrait?: Portrait;
   resume?: Contact;
@@ -27,10 +27,7 @@ export const profile: Profile = {
   greeting: 'Привет! Я',
   role: 'UX/UI дизайнер в B2B',
   portrait: { image: portrait, alt: 'Мария Першина' },
-  bio: [
-    'Проектирую текстовый редактор для экосистемы Saby',
-    'Активно внедряю вайбкодинг в рабочие и личные проекты',
-  ],
+  bio: 'Проектирую текстовый редактор для экосистемы Saby. Активно внедряю вайбкодинг в рабочие и личные проекты',
   contacts: [
     { label: 'Email', icon: 'email', href: 'mailto:mariabaranova97@yandex.ru' },
     { label: 'Telegram', icon: 'telegram', href: 'https://t.me/mariaa_pershina' },

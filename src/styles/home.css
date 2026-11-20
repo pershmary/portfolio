@@ -48,10 +48,8 @@
 .portfolio-home .hero-bio {
   max-width: 64ch;
   margin-top: clamp(12px, 2vw, 24px);
-  font-size: 0.9375rem;
+  font-size: 1rem;
 }
-
-.portfolio-home .hero-bio p + p { margin-top: 0.75em; }
 
 .portfolio-home .section h2 {
   font-size: clamp(1.85rem, 3.3vw, 2.8rem);
