@@ -21,6 +21,7 @@
 .portfolio-home .hero-portrait {
   max-width: clamp(148px, 18vw, 218px);
   aspect-ratio: 1;
+  border-radius: 50%;
   align-self: start;
 }
 .portfolio-home .hero h1 {
@@ -59,7 +60,7 @@
 .portfolio-home .section { padding-top: clamp(22px, 3vw, 38px); }
 .portfolio-home #cases { border-top: 0; }
 .portfolio-home .case-grid { row-gap: clamp(28px, 4vw, 48px); }
-.portfolio-home .case-card .case-cover { aspect-ratio: 16 / 9; padding: 0; }
+.portfolio-home .case-card .case-cover { aspect-ratio: 16 / 9; padding: 0; border-radius: 20px; }
 .portfolio-home .case-card .case-cover img { object-fit: cover; }
 .portfolio-home .case-heading h3 { font-weight: var(--weight-semibold); }
 .portfolio-home .case-caption .summary { max-width: 54ch; }
