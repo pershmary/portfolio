@@ -19,7 +19,7 @@
   justify-content: center;
   justify-items: center;
   text-align: center;
-  gap: clamp(20px, 2.25vw, 32px);
+  gap: 28px;
   padding-block: clamp(40px, 4.3vw, 62px);
 }
 .portfolio-home .hero-portrait {
@@ -109,7 +109,6 @@
 
 @media (max-width: 680px) {
   .portfolio-home .hero {
-    gap: 18px;
     padding-block: 20px;
   }
   .portfolio-home .hero-portrait { max-width: 116px; }
