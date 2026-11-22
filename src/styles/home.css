@@ -32,7 +32,7 @@
   margin-inline: auto;
   font-weight: var(--weight-semibold);
   font-size: clamp(2.65rem, 4.9vw, 4rem);
-  line-height: 1.04;
+  line-height: 1.15;
   letter-spacing: -0.045em;
   text-wrap: balance;
 }
@@ -114,6 +114,6 @@
   }
   .portfolio-home .hero-portrait { max-width: 116px; }
   .portfolio-home .hero-portrait .media-placeholder { font-size: 0.6875rem; }
-  .portfolio-home .hero h1 { font-size: clamp(2rem, 8.8vw, 3.5rem); line-height: 1.09; }
+  .portfolio-home .hero h1 { font-size: clamp(2rem, 8.8vw, 3.5rem); }
   .portfolio-home .concept-images { grid-template-columns: minmax(0, 1fr); }
 }
