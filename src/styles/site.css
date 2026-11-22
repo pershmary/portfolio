@@ -329,6 +329,7 @@ figcaption { margin-top: 8px; color: var(--muted); font-size: 0.875rem; }
 .case-prose > * + * { margin-top: 1em; }
 .case-prose > h2, .case-prose > h3 { margin-top: 1.55em; }
 .case-prose > h2 { font-size: clamp(1.625rem, 3vw, 2.25rem); }
+.case-prose > p:has(> img:only-child) { max-width: 960px; margin-block: clamp(24px, 4vw, 48px); }
 .case-prose > figure, .case-prose > .wide { max-width: 100%; margin-block: clamp(24px, 4vw, 48px); }
 .case-prose img { margin-inline: auto; }
 .case-prose a { color: var(--accent); overflow-wrap: anywhere; }
