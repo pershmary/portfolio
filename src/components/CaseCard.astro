@@ -24,9 +24,8 @@ const Card = published ? 'a' : 'article';
   <div class="case-caption">
     <div class="case-heading">
       <h3>{data.title}</h3>
-      {published && <span class="arrow arrow-out case-arrow" aria-hidden="true"></span>}
+      {!published && <span class="case-status">Кейс готовится</span>}
     </div>
     <p class="summary">{data.summary}</p>
-    {!published && <p class="case-status">Кейс готовится</p>}
   </div>
 </Card>
