@@ -33,7 +33,7 @@ const ogImage = Astro.site && socialImage
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content={home ? "#ffffff" : "#f9f9f6"} />
+    <meta name="theme-color" content={home || type === 'article' ? "#ffffff" : "#f9f9f6"} />
     {import.meta.env.DEV && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/png" sizes="48x48" href={sitePath('/favicon.png')} />
     {canonical && <link rel="canonical" href={canonical} />}
@@ -46,7 +46,7 @@ const ogImage = Astro.site && socialImage
     {ogImage && <meta property="og:image" content={ogImage} />}
     {ogImage && socialImageAlt && <meta property="og:image:alt" content={socialImageAlt} />}
   </head>
-  <body class:list={{ "portfolio-home": home }}>
+  <body class:list={{ "portfolio-home": home, "portfolio-case": type === 'article' }}>
     <a class="skip-link" href="#main">К содержанию</a>
     <main class="container" id="main">
       <slot />

@@ -20,7 +20,7 @@ const meta = [data.role, data.year, data.readingTime && `${data.readingTime} м�
     <header class="case-intro">
       <a class="text-link back-link" href={sitePath(showWork ? '/#cases' : '/')}><span class="arrow arrow-left" aria-hidden="true"></span> {showWork ? 'К списку кейсов' : 'На главную'}</a>
       <h1>{data.title}</h1>
-      <p class="hero-lead">{data.summary}</p>
+      <p class="summary">{data.summary}</p>
       {meta.length > 0 && <ul class="case-facts">{meta.map((item) => <li>{item}</li>)}</ul>}
       {data.tags && data.tags.length > 0 && <p class="case-tags">{data.tags.join(' · ')}</p>}
     </header>

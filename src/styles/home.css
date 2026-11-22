@@ -1,13 +1,4 @@
 .portfolio-home {
-  --page: #fff;
-  --ink: #191919;
-  --muted: #565656;
-  --accent: #292929;
-  --line: #dededb;
-  --portrait: #f3f3f0;
-  --sage: #edf0ed;
-  --sand: #f1ede8;
-  --slate: #eeeff2;
   --gutter: clamp(10px, 2.5vw, 36px);
   --content-width: calc(50% + 620px);
   --column-gap: clamp(16px, 2vw, 28px);
@@ -30,11 +21,6 @@
 .portfolio-home .hero h1 {
   max-width: 19ch;
   margin-inline: auto;
-  font-weight: var(--weight-semibold);
-  font-size: clamp(2.65rem, 4.9vw, 4rem);
-  line-height: 1.15;
-  letter-spacing: -0.045em;
-  text-wrap: balance;
 }
 .portfolio-home .hero .contact-links { margin-top: 9px; justify-content: center; }
 .portfolio-home .hero .contact-links li:nth-child(2) {
@@ -49,19 +35,6 @@
   border-radius: 50%;
   background: var(--muted);
 }
-.portfolio-home .contact-links a {
-  padding: 0;
-  border: 0;
-  gap: 7px;
-  font-size: 1rem;
-  font-weight: var(--weight-semibold);
-  text-decoration: underline;
-}
-.portfolio-home .contact-links a:hover {
-  background: transparent;
-  color: var(--ink);
-  text-decoration-thickness: 2px;
-}
 .portfolio-home .hero-bio {
   max-width: 64ch;
   margin-inline: auto;
@@ -69,17 +42,11 @@
   font-size: 1rem;
 }
 
-.portfolio-home .section h2 {
-  font-size: clamp(1.85rem, 3.3vw, 2.8rem);
-  font-weight: var(--weight-semibold);
-  letter-spacing: -0.05em;
-}
 .portfolio-home .section { padding-top: clamp(22px, 3vw, 38px); }
 .portfolio-home #cases { border-top: 0; padding-top: 0; }
 .portfolio-home .case-grid { row-gap: clamp(28px, 4vw, 48px); }
 .portfolio-home .case-card .case-cover { aspect-ratio: 16 / 9; padding: 0; border-radius: 20px; }
 .portfolio-home .case-card .case-cover img { object-fit: cover; }
-.portfolio-home .case-heading h3 { font-weight: var(--weight-semibold); }
 .portfolio-home .case-caption .summary { max-width: 54ch; }
 .case-card-text {
   padding: 20px 0 3px;
@@ -96,8 +63,6 @@
 .portfolio-home .concept-heading { margin-bottom: 13px; }
 .portfolio-home .concept-images { grid-template-columns: repeat(2, minmax(0, 400px)); }
 .portfolio-home .concept-screen { background: #e9e9e7; }
-.portfolio-home .footer { background: var(--page); }
-.portfolio-home .footer-inner { border-top: 1px solid var(--line); }
 
 @media (min-width: 1024px) {
   .portfolio-home {
@@ -112,6 +77,5 @@
   }
   .portfolio-home .hero-portrait { max-width: 116px; }
   .portfolio-home .hero-portrait .media-placeholder { font-size: 0.6875rem; }
-  .portfolio-home .hero h1 { font-size: clamp(2rem, 8.8vw, 3.5rem); }
   .portfolio-home .concept-images { grid-template-columns: minmax(0, 1fr); }
 }
